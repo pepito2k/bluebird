@@ -1,0 +1,12 @@
+<%= form_for ["admin", @category] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, class: "span3" %>
+
+  <div class="form-actions">
+    <% if @category.new_record? %>
+    <%= f.submit "Create Category", class: "btn btn-primary" %>
+    <% else %>
+    <%= f.submit "Update Category", class: "btn btn-primary" %>
+    <% end %>
+  </div>
+<% end %>
