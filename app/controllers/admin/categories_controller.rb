@@ -13,6 +13,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.save
       redirect_to admin_categories_path, notice: "Category added successfully"
     end
+    render :new
   end
 
   def edit
@@ -25,6 +26,7 @@ class Admin::CategoriesController < ApplicationController
     if @category.update_attributes(params[:category])
       redirect_to admin_categories_path, notice: "Category updated successfully"
     end
+    render :edit
   end
 
   def destroy
