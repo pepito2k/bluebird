@@ -12,6 +12,8 @@ class Admin::CategoriesController < ApplicationController
     @category = Category.new(params[:category])
     if @category.save
       redirect_to admin_categories_path, notice: "Category added successfully"
+    else
+      flash[:errors] = @category.errors.full_messages
     end
     render :new
   end
