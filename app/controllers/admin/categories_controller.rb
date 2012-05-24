@@ -14,8 +14,8 @@ class Admin::CategoriesController < Admin::AdminController
       redirect_to admin_categories_path, notice: "Category added successfully"
     else
       flash[:errors] = @category.errors.full_messages
+      render :new
     end
-    render :new
   end
 
   def edit
