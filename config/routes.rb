@@ -67,6 +67,7 @@ Bluebird::Application.routes.draw do
   scope "/admin", :module => :admin, :as => "admin" do
     root :to => "dashboard#index"
     resources :categories
+    resources :sources
   end
 
 end

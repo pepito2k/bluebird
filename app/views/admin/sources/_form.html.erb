@@ -1,0 +1,14 @@
+<%= render partial: "/admin/shared/errors" %>
+
+<%= form_for ["admin", @source] do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name, class: "span3" %>
+
+    <div class="form-actions">
+      <% if @source.new_record? %>
+          <%= f.submit "Create Source", class: "btn btn-primary" %>
+      <% else %>
+          <%= f.submit "Update source", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+<% end %>
