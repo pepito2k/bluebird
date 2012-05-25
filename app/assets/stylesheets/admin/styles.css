@@ -10,11 +10,15 @@
 -------------------------------------------------- */
 body {
   position: relative;
-  padding-top: 50px;
+  padding-top: 20px;
   background-color: #fff;
   background-image: url(../img/grid-18px-masked.png);
   background-repeat: repeat-x;
   background-position: 0 40px;
+}
+
+#logo {
+  margin-bottom: 20px;
 }
 
 
