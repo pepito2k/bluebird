@@ -6,6 +6,7 @@ class Admin::SourcesController < ApplicationController
 
   def new
     @source = Source.new
+    @categories = Category.all
   end
 
   def create
@@ -14,12 +15,13 @@ class Admin::SourcesController < ApplicationController
       redirect_to admin_sources_path, notice: "Source added successfully"
     else
       flash[:errors] = @source.errors.full_messages
+      render :new
     end
-    #render :new
   end
 
   def edit
     @source = Source.find(params[:id])
+    @categories = Category.all
   end
 
   def update
@@ -27,8 +29,9 @@ class Admin::SourcesController < ApplicationController
 
     if @source.update_attributes(params[:source])
       redirect_to admin_sources_path, notice: "Source updated successfully"
+    else
+      render :edit
     end
-    #render :edit
   end
 
   def destroy

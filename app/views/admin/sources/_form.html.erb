@@ -1,14 +1,39 @@
 <%= render partial: "/admin/shared/errors" %>
 
-<%= form_for ["admin", @source] do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name, class: "span3" %>
+<%= form_for ["admin", @source], html: { class: "form-horizontal" } do |f| %>
+  <%= field_set_tag do %>
+    <div class="control-group">
+      <%= f.label :name, class: "control-label" %>
+      <div class="controls">
+        <div class="input-prepend">
+          <span class="add-on">@</span><%= f.text_field :name, class: "span3" %>
+        </div>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :active, class: "control-label" %>
+      <div class="controls">
+        <label class="checkbox">
+          <%= f.check_box :active %>
+          Uncheck to hide this source
+        </label>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :category_id, class: "control-label" %>
+      <div class="controls">
+        <%= collection_select :source, :category_id, @categories, :id, :name, class: "span3" %>
+      </div>
+    </div>
 
     <div class="form-actions">
       <% if @source.new_record? %>
-          <%= f.submit "Create Source", class: "btn btn-primary" %>
+        <%= f.submit "Create Source", class: "btn btn-primary" %>
       <% else %>
-          <%= f.submit "Update source", class: "btn btn-primary" %>
+        <%= f.submit "Update Source", class: "btn btn-primary" %>
       <% end %>
     </div>
+  <% end %>
 <% end %>

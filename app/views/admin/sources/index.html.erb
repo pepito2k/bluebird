@@ -10,22 +10,26 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Id</th>
+    <th class="span1">Id</th>
     <th>Name</th>
-    <th>Actions</th>
+    <th>Category</th>
+    <th>Active</th>
+    <th class="span2">Actions</th>
   </tr>
   </thead>
   <tbody>
-  <% @sources.each do |c| %>
+  <% @sources.each do |s| %>
       <tr>
-        <td><%= c.id %></td>
-        <td><%= c.name %></td>
+        <td><%= s.id %></td>
+        <td><%= s.name %></td>
+        <td><%= s.category.name %></td>
+        <td><%= yes_no_label(s.active) %></td>
         <td>
-          <%= link_to edit_admin_source_path(c.id), class: "btn btn-mini" do %>
+          <%= link_to edit_admin_source_path(s.id), class: "btn btn-mini" do %>
               <i class="icon-pencil"></i>
               Edit
           <% end %>
-          <%= link_to admin_source_path(c.id), class: "btn btn-danger btn-mini", confirm: "Are you sure you want to delete this source?", method: :delete do %>
+          <%= link_to admin_source_path(s.id), class: "btn btn-danger btn-mini", confirm: "Are you sure you want to delete this source?", method: :delete do %>
               <i class="icon-trash icon-white"></i>
               Delete
           <% end %>
@@ -35,7 +39,7 @@
   </tbody>
   <tfoot>
   <tr>
-    <td colspan="3"><%= pluralize @sources.size, "Source" %> found</td>
+    <td colspan="5"><%= pluralize @sources.size, "Source" %> found</td>
   </tr>
   </tfoot>
 </table>
