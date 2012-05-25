@@ -12,7 +12,8 @@
     <tr>
       <th>Id</th>
       <th>Name</th>
-      <th>Actions</th>
+      <th>Active</th>
+      <th class="span2">Actions</th>
     </tr>
   </thead>
   <tbody>
@@ -20,6 +21,7 @@
     <tr>
       <td><%= c.id %></td>
       <td><%= c.name %></td>
+      <td><%= yes_no_label(c.active) %></td>
       <td>
         <%= link_to edit_admin_category_path(c.id), class: "btn btn-mini" do %>
           <i class="icon-pencil"></i>

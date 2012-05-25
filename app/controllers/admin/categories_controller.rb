@@ -27,8 +27,9 @@ class Admin::CategoriesController < Admin::AdminController
 
     if @category.update_attributes(params[:category])
       redirect_to admin_categories_path, notice: "Category updated successfully"
+    else
+      render :edit
     end
-    render :edit
   end
 
   def destroy
