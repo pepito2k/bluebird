@@ -12,7 +12,7 @@
       <th>Name</th>
       <td>
         <%= @source.name %>
-        <%= image_tag @source.profile_image_url %>
+        <%= image_tag @source.profile_image_url unless @source.profile_image_url.nil? %>
       </td>
     </tr>
     <tr>
@@ -25,11 +25,11 @@
     </tr>
     <tr>
       <th>Url</th>
-      <td><%= link_to @source.url, @source.url %></td>
+      <td><%= link_to(@source.url, @source.url) unless @source.url.nil? %></td>
     </tr>
     <tr>
       <th>Registered at</th>
-      <td><%= time_ago_in_words(@source.date_registration).titleize %> ago</td>
+      <td><%= time_ago_in_words(@source.date_registration).titleize + " ago" unless @source.date_registration.nil? %></td>
     </tr>
     <tr>
       <th>Language</th>
