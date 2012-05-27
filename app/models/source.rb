@@ -11,15 +11,17 @@ class Source < ActiveRecord::Base
 
 
   def get_twitter_profile
-    @TwitterUser = Twitter.user(screen_name)
-    self.twitter_id        = @TwitterUser.id,
-    self.name              = @TwitterUser.name,
-    self.location          = @TwitterUser.location,
-    self.description       = @TwitterUser.description,
-    self.url               = @TwitterUser.url,
-    self.date_registration = @TwitterUser.created_at,
-    self.lang              = @TwitterUser.lang,
-    self.profile_image_url = @TwitterUser.profile_image_url
+    if twitter_id.nil?
+      @TwitterUser = Twitter.user(screen_name)
+      self.twitter_id        = @TwitterUser.id,
+      self.name              = @TwitterUser.name,
+      self.location          = @TwitterUser.location,
+      self.description       = @TwitterUser.description,
+      self.url               = @TwitterUser.url,
+      self.date_registration = @TwitterUser.created_at,
+      self.lang              = @TwitterUser.lang,
+      self.profile_image_url = @TwitterUser.profile_image_url
+    end
   end
 
 end
