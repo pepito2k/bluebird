@@ -14,17 +14,21 @@
     <th>Name</th>
     <th>Category</th>
     <th>Active</th>
-    <th class="span2">Actions</th>
+    <th class="span3">Actions</th>
   </tr>
   </thead>
   <tbody>
   <% @sources.each do |s| %>
       <tr>
         <td><%= s.id %></td>
-        <td><%= s.name %></td>
+        <td><%= s.screen_name %></td>
         <td><%= s.category.name %></td>
         <td><%= yes_no_label(s.active) %></td>
         <td>
+          <%= link_to admin_source_path(s.id), class: "btn btn-mini" do %>
+              <i class="icon-eye-open"></i>
+              View
+          <% end %>
           <%= link_to edit_admin_source_path(s.id), class: "btn btn-mini" do %>
               <i class="icon-pencil"></i>
               Edit

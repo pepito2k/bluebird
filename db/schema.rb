@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120525023441) do
+ActiveRecord::Schema.define(:version => 20120527042110) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -21,12 +21,22 @@ ActiveRecord::Schema.define(:version => 20120525023441) do
   end
 
   create_table "sources", :force => true do |t|
-    t.string   "name"
-    t.boolean  "active",      :default => true
-    t.datetime "created_at",                    :null => false
-    t.datetime "updated_at",                    :null => false
+    t.string   "screen_name"
+    t.boolean  "active",            :default => true
+    t.datetime "created_at",                          :null => false
+    t.datetime "updated_at",                          :null => false
     t.integer  "category_id"
+    t.integer  "twitter_id"
+    t.string   "name"
+    t.string   "location"
+    t.string   "description"
+    t.string   "url"
+    t.datetime "date_registration"
+    t.string   "lang"
+    t.string   "profile_image_url"
   end
+
+  add_index "sources", ["screen_name"], :name => "index_sources_on_screen_name", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

@@ -4,6 +4,10 @@ class Admin::SourcesController < ApplicationController
     @sources = Source.all
   end
 
+  def show
+    @source = Source.find(params[:id])
+  end
+
   def new
     @source = Source.new
     @categories = Category.all
@@ -26,10 +30,12 @@ class Admin::SourcesController < ApplicationController
 
   def update
     @source = Source.find(params[:id])
+    @categories = Category.all
 
     if @source.update_attributes(params[:source])
       redirect_to admin_sources_path, notice: "Source updated successfully"
     else
+      flash[:errors] = @source.errors.full_messages
       render :edit
     end
   end
@@ -39,7 +45,7 @@ class Admin::SourcesController < ApplicationController
     if source.destroy
       flash[:notice] = "Source deleted successfully"
     else
-      flash[:notice] = source.errors.full_messages
+      flash[:errors] = source.errors.full_messages
     end
     redirect_to admin_sources_path
   end
