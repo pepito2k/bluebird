@@ -40,12 +40,16 @@ ActiveRecord::Schema.define(:version => 20120528000735) do
 
   create_table "twits", :force => true do |t|
     t.datetime "created_at"
+    t.integer  "twit_id"
     t.string   "text"
     t.integer  "retweet_count"
     t.boolean  "favorited"
     t.boolean  "retweeted"
     t.integer  "source_id"
+    t.boolean  "processed",     :default => false
   end
+
+  add_index "twits", ["twit_id"], :name => "index_twits_on_twit_id", :unique => true
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
