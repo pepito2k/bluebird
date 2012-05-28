@@ -4,13 +4,14 @@ class Source < ActiveRecord::Base
                   :location, :description, :url, :date_registration, :lang, :profile_image_url
 
   belongs_to :category
+  has_many :twits
 
   validates_presence_of :screen_name
   validates_presence_of :category
 
   before_save :get_twitter_profile
 
-
+  private
   def get_twitter_profile
     unless screen_name_changed? twitter_id
       user = Twitter.user(self.screen_name)

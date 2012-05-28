@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120527042110) do
+ActiveRecord::Schema.define(:version => 20120528000735) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -37,6 +37,15 @@ ActiveRecord::Schema.define(:version => 20120527042110) do
   end
 
   add_index "sources", ["screen_name"], :name => "index_sources_on_screen_name", :unique => true
+
+  create_table "twits", :force => true do |t|
+    t.datetime "created_at"
+    t.string   "text"
+    t.integer  "retweet_count"
+    t.boolean  "favorited"
+    t.boolean  "retweeted"
+    t.integer  "source_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
