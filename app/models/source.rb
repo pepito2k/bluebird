@@ -6,21 +6,25 @@ class Source < ActiveRecord::Base
   belongs_to :category
 
   validates_presence_of :screen_name
+  validates_presence_of :category
 
   before_save :get_twitter_profile
 
 
   def get_twitter_profile
-    if twitter_id.nil?
-      @TwitterUser = Twitter.user(screen_name)
-      self.twitter_id        = @TwitterUser.id,
-      self.name              = @TwitterUser.name,
-      self.location          = @TwitterUser.location,
-      self.description       = @TwitterUser.description,
-      self.url               = @TwitterUser.url,
-      self.date_registration = @TwitterUser.created_at,
-      self.lang              = @TwitterUser.lang,
-      self.profile_image_url = @TwitterUser.profile_image_url
+    unless screen_name_changed? twitter_id
+      user = Twitter.user(self.screen_name)
+
+      self.attributes = {
+        twitter_id:        user.id,
+        name:              user.name,
+        location:          user.location,
+        description:       user.description,
+        url:               user.url,
+        date_registration: user.created_at,
+        lang:              user.lang,
+        profile_image_url: user.profile_image_url
+      }
     end
   end
 
