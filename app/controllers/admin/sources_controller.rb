@@ -10,12 +10,12 @@ class Admin::SourcesController < ApplicationController
 
   def create
     @source = Source.new(params[:source])
-    if @source.save
-      redirect_to admin_sources_path, notice: "Source added successfully"
-    else
-      flash[:errors] = @source.errors.full_messages
-    end
-    #render :new
+      if @source.save
+        redirect_to admin_sources_path, notice: "Source added successfully"
+      else
+        flash[:errors] = @source.errors.full_messages
+        render :new
+      end
   end
 
   def edit
@@ -27,8 +27,9 @@ class Admin::SourcesController < ApplicationController
 
     if @source.update_attributes(params[:source])
       redirect_to admin_sources_path, notice: "Source updated successfully"
+    else
+      render :edit
     end
-    #render :edit
   end
 
   def destroy
@@ -40,5 +41,4 @@ class Admin::SourcesController < ApplicationController
     end
     redirect_to admin_sources_path
   end
-
 end
