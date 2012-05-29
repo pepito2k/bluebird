@@ -19,6 +19,8 @@
 
 # Learn more: http://github.com/javan/whenever
 
-every 1.hour do
+set :environment, "development"
+
+every 15.minutes do
   rake "get_twits"
 end
