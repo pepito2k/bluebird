@@ -1,1 +1,16 @@
 <h1>Hola!</h1>
+
+Titulo:
+<%= @doc.title %>
+<br />
+<br />
+
+Autor:
+<%= @doc.author %>
+<br />
+<br />
+
+Cuerpo:
+<%= simple_format @doc.html_body %>
+<br />
+<br />
