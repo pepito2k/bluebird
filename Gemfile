@@ -42,3 +42,4 @@ gem 'jquery-rails'
 gem 'devise'
 gem 'twitter'
 gem 'whenever', :require => false
+gem 'pismo'
