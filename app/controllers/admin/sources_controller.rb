@@ -15,6 +15,7 @@ class Admin::SourcesController < Admin::AdminController
 
   def create
     @source = Source.new(params[:source])
+    @categories = Category.all
     if @source.save
       redirect_to admin_sources_path, notice: "Source added successfully"
     else

@@ -6,6 +6,7 @@ class Source < ActiveRecord::Base
   belongs_to :category
   has_many :twits
 
+  validates_uniqueness_of :screen_name
   validates_presence_of :screen_name
   validates_presence_of :category
 
