@@ -1,7 +1,7 @@
 class Admin::CategoriesController < Admin::AdminController
 
   def index
-    @categories = Category.all    
+    @categories = Category.all(:order => "name asc")
   end
 
   def new
