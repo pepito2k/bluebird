@@ -10,12 +10,12 @@ class Admin::SourcesController < Admin::AdminController
 
   def new
     @source = Source.new
-    @categories = Category.all
+    @categories = Category.active
   end
 
   def create
     @source = Source.new(params[:source])
-    @categories = Category.all
+    @categories = Category.active
     if @source.save
       redirect_to admin_sources_path, notice: "Source added successfully"
     else
@@ -26,12 +26,12 @@ class Admin::SourcesController < Admin::AdminController
 
   def edit
     @source = Source.find(params[:id])
-    @categories = Category.all
+    @categories = Category.active
   end
 
   def update
     @source = Source.find(params[:id])
-    @categories = Category.all
+    @categories = Category.active
 
     if @source.update_attributes(params[:source])
       redirect_to admin_sources_path, notice: "Source updated successfully"

@@ -4,4 +4,6 @@ class Category < ActiveRecord::Base
   has_many :sources
 
   validates_presence_of :name
+
+  scope :active, where(:active => true)
 end
