@@ -10,19 +10,36 @@
 <table class="table table-striped">
   <thead>
   <tr>
-    <th>Id</th>
+    <th class="span1">Id</th>
     <th>Name</th>
+<<<<<<< HEAD
     <th>Active</th>
     <th class="span2">Actions</th>
+=======
+    <th>Category</th>
+    <th>Active</th>
+    <th class="span3">Actions</th>
+>>>>>>> 15165d5ca7f162858ca03e3063500aa5cebef407
   </tr>
   </thead>
   <tbody>
   <% @sources.each do |s| %>
       <tr>
         <td><%= s.id %></td>
+<<<<<<< HEAD
         <td><%= s.name %></td>
         <td><%= yes_no_label(s.active) %></td>
         <td>
+=======
+        <td><%= s.screen_name %></td>
+        <td><%= s.category.name %></td>
+        <td><%= yes_no_label(s.active) %></td>
+        <td>
+          <%= link_to admin_source_path(s.id), class: "btn btn-mini" do %>
+              <i class="icon-eye-open"></i>
+              View
+          <% end %>
+>>>>>>> 15165d5ca7f162858ca03e3063500aa5cebef407
           <%= link_to edit_admin_source_path(s.id), class: "btn btn-mini" do %>
               <i class="icon-pencil"></i>
               Edit
@@ -37,7 +54,7 @@
   </tbody>
   <tfoot>
   <tr>
-    <td colspan="3"><%= pluralize @sources.size, "Source" %> found</td>
+    <td colspan="5"><%= pluralize @sources.size, "Source" %> found</td>
   </tr>
   </tfoot>
 </table>

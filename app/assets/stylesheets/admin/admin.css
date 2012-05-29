@@ -12,3 +12,16 @@
 */
 //= require bootstrap.min
 //= require admin/styles
+
+.profile-view-table {
+  position: relative;
+}
+
+.profile-view-table img {
+  border: 2px solid #F3F3F3;
+  border-radius: 4px;
+  box-shadow: 1px 1px 5px #CCC;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}

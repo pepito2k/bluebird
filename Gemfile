@@ -41,3 +41,4 @@ gem 'jquery-rails'
 # Bluebird project gems
 gem 'devise'
 gem 'twitter'
+gem 'whenever', :require => false
