@@ -13,7 +13,7 @@ class Source < ActiveRecord::Base
 
   private
   def get_twitter_profile
-    unless screen_name_changed? twitter_id
+    unless screen_name_changed? && twitter_id
       user = Twitter.user(self.screen_name)
 
       self.attributes = {
