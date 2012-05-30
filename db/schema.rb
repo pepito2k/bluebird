@@ -11,11 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120528221816) do
+ActiveRecord::Schema.define(:version => 20120529235249) do
 
   create_table "articles", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.string   "title"
+    t.string   "author"
+    t.text     "body"
+    t.text     "body_html"
+    t.string   "url"
+    t.text     "description"
+    t.datetime "date_published"
+    t.integer  "source_id"
+    t.integer  "twitter_shares"
+    t.integer  "facebook_shares"
+    t.integer  "google_plus_shares"
+    t.boolean  "active"
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
   end
 
   create_table "categories", :force => true do |t|
@@ -73,10 +85,5 @@ ActiveRecord::Schema.define(:version => 20120528221816) do
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
-
-  create_table "usuarios", :force => true do |t|
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
 
 end
