@@ -24,3 +24,7 @@ set :environment, "development"
 every 15.minutes do
   rake "get_twits"
 end
+
+# every 8.minutes do
+#   rake "process_twits"
+# end
