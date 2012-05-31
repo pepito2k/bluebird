@@ -1,0 +1,40 @@
+<div class="page-header">
+  <h1>Articles</h1>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th class="span1">Id</th>
+      <th>Category</th>
+      <th>Title</th>
+      <th>Active</th>
+      <th class="span2">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% @articles.each do |a| %>
+    <tr>
+      <td><%= a.id %></td>
+      <td><%= a.source.category.name %>
+      <td><%= a.title %></td>
+      <td><%= yes_no_label(a.active) %></td>
+      <td>
+        <%= link_to edit_admin_article_path(a.id), class: "btn btn-mini" do %>
+          <i class="icon-pencil"></i>
+          Edit
+        <% end %>
+        <%= link_to admin_article_path(a.id), class: "btn btn-danger btn-mini", confirm: "Are you sure you want to delete this article?", method: :delete do %>
+          <i class="icon-trash icon-white"></i>
+          Delete
+        <% end %>
+      </td>
+    </tr>
+  <% end %>
+  </tbody>
+  <tfoot>
+    <tr>
+      <td colspan="4"><%= pluralize @articles.count, "Article" %> found</td>
+    </tr>
+  </tfoot>
+</table>

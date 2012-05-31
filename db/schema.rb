@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120529235249) do
+ActiveRecord::Schema.define(:version => 20120530235704) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -25,9 +25,9 @@ ActiveRecord::Schema.define(:version => 20120529235249) do
     t.integer  "twitter_shares"
     t.integer  "facebook_shares"
     t.integer  "google_plus_shares"
-    t.boolean  "active"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.boolean  "active",             :default => true
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
   end
 
   create_table "categories", :force => true do |t|

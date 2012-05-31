@@ -68,6 +68,7 @@ Bluebird::Application.routes.draw do
     root :to => "dashboard#index"
     resources :categories
     resources :sources
+    resources :articles
   end
 
 end
