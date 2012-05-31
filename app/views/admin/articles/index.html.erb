@@ -34,7 +34,9 @@
   </tbody>
   <tfoot>
     <tr>
-      <td colspan="4"><%= pluralize @articles.count, "Article" %> found</td>
+      <td colspan="5"><%= pluralize @articles.count, "Article" %> found</td>
     </tr>
   </tfoot>
 </table>
+
+<%= will_paginate %>

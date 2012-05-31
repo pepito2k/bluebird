@@ -43,7 +43,9 @@
   </tbody>
   <tfoot>
   <tr>
-    <td colspan="5"><%= pluralize @sources.size, "Source" %> found</td>
+    <td colspan="5"><%= pluralize @sources.count, "Source" %> found</td>
   </tr>
   </tfoot>
 </table>
+
+<%= will_paginate %>

@@ -43,3 +43,5 @@ gem 'devise'
 gem 'twitter'
 gem 'whenever', :require => false
 gem 'pismo'
+gem 'will_paginate', '~> 3.0'
+gem 'bootstrap-will_paginate'

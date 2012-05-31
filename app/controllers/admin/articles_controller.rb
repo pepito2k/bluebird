@@ -1,7 +1,7 @@
 class Admin::ArticlesController < Admin::AdminController
 
   def index
-    @articles = Article.all
+    @articles = Article.paginate(:page => params[:page])
   end
 
   def destroy

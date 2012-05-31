@@ -1,7 +1,7 @@
 class Admin::SourcesController < Admin::AdminController
 
   def index
-    @sources = Source.all
+    @sources = Source.paginate(:page => params[:page])
   end
 
   def show
