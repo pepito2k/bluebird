@@ -14,4 +14,18 @@ class Admin::ArticlesController < Admin::AdminController
     redirect_to admin_articles_path
   end
 
+  def edit
+    @article = Article.find(params[:id])
+  end
+
+  def update
+    @article = Article.find(params[:id])
+
+    if @article.update_attributes(params[:article])
+      redirect_to admin_articles_path, notice: "Article updated successfully"
+    else
+      render :edit
+    end
+  end
+
 end

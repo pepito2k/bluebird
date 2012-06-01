@@ -12,7 +12,7 @@ class CreateArticles < ActiveRecord::Migration
       t.integer :twitter_shares
       t.integer :facebook_shares
       t.integer :google_plus_shares
-      t.boolean :active
+      t.boolean :active, :default => true
 
       t.timestamps
     end
