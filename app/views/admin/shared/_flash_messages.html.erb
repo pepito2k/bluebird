@@ -1,0 +1,18 @@
+<% if flash[:errors] %>
+  <div class="alert alert-error fade in">
+    <button class="close" data-dismiss="alert">×</button>
+    <strong>The following errors were found:</strong>
+    <ul>
+    <% flash[:errors].each do |e| %>
+      <li><%= e %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<% if flash[:notice] %>
+  <div class="alert alert-success fade in">
+    <button class="close" data-dismiss="alert">×</button>
+    <%= flash[:notice] %>
+  </div>
+<% end %>
