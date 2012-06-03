@@ -13,3 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+
+$(".disabled, .pagination .active").click(function(e){
+  e.preventDefault();
+  return false;
+});
