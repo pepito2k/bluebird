@@ -1,7 +1,13 @@
 class Admin::SourcesController < Admin::AdminController
 
   def index
-    @sources = Source.paginate(:page => params[:page])
+    if params['category']
+      @category = Category.find(params['category'])
+      @sources = @category.sources.paginate(:page => params[:page])
+    else
+      @sources = Source.paginate(:page => params[:page])
+    end
+    @categories = Category.active
   end
 
   def show

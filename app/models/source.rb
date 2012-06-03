@@ -11,6 +11,8 @@ class Source < ActiveRecord::Base
   validates_presence_of :screen_name
   validates_presence_of :category
 
+  scope :active, where(:active => true)
+
   before_save :get_twitter_profile
 
   private
