@@ -45,3 +45,5 @@ gem 'whenever', :require => false
 gem 'pismo'
 gem 'will_paginate', '~> 3.0'
 gem 'bootstrap-will_paginate'
+gem 'quiet_assets', :group => :development
+gem 'thin'
