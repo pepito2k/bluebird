@@ -1,0 +1,13 @@
+<header class="main-title">
+  <h1>You are reading TrendingMagazine's <strong><%= @category.name %> section</strong></h1>
+  <p>Swipe or drag to flip the pages, click to open items </p>
+  <p><strong>Best viewed in a Webkit browser (Safari, Chrome)</strong></p>
+</header>
+
+<div id="flip" class="container">
+  <%= render :partial => "cover" %>
+  <%= render :partial => "page1", :locals => {:articles => @pages[0]} %>
+  <%= render :partial => "page2", :locals => {:articles => @pages[1]} %>
+  <%= render :partial => "page3", :locals => {:articles => @pages[2]} %>
+  <%= render :partial => "back_cover" %>
+</div>

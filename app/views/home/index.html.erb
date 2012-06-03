@@ -1,16 +1,7 @@
-<h1>Hola!</h1>
+<h1><img src="/assets/logo_admin.png" title="TrendingMag" /></h1>
 
-Titulo:
-<%= @doc.title %>
-<br />
-<br />
-
-Autor:
-<%= @doc.author %>
-<br />
-<br />
-
-Cuerpo:
-<%= simple_format @doc.html_body %>
-<br />
-<br />
+<ul>
+<% @categories.each do |c| %>
+  <li><%= link_to(c.name, read_category_path(c.slug)) %></li>
+<% end %>
+</ul>
