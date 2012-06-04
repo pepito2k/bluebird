@@ -35,7 +35,10 @@ ActiveRecord::Schema.define(:version => 20120604211933) do
     t.boolean  "active",     :default => true
     t.datetime "created_at",                   :null => false
     t.datetime "updated_at",                   :null => false
+    t.string   "slug"
   end
+
+  add_index "categories", ["slug"], :name => "index_categories_on_slug"
 
   create_table "sources", :force => true do |t|
     t.string   "screen_name"

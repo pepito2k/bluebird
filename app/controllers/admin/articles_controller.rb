@@ -1,7 +1,13 @@
 class Admin::ArticlesController < Admin::AdminController
 
   def index
-    @articles = Article.paginate(:page => params[:page])
+    if params['category']
+      @category = Category.find(params['category'])
+      @articles = @category.articles.paginate(:page => params[:page] )
+    else
+      @articles = Article.paginate(:page => params[:page])
+    end
+    @categories = Category.active
   end
 
   def destroy

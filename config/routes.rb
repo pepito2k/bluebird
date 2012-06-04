@@ -64,7 +64,9 @@ Bluebird::Application.routes.draw do
   #   get "sign_in", :to => "devise/sessions#new"
   # end
 
-  scope "/admin", :module => :admin, :as => "admin" do
+  match 'read/:category_slug' => 'home#read', :as => "read_category"
+
+  namespace :admin do
     root :to => "dashboard#index"
     resources :categories
     resources :sources

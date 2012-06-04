@@ -4,10 +4,26 @@
 
 <%= render partial: "/admin/shared/flash_messages" %>
 
-<%= link_to new_admin_source_path, class: "btn btn-success" do %>
-    <i class="icon-plus-sign icon-white"></i>
-    New Source
-<% end %>
+<div class="btn-toolbar">
+  <div class="btn-group">
+    <%= link_to new_admin_source_path, class: "btn btn-success" do %>
+      <i class="icon-plus-sign icon-white"></i>
+      New Source
+    <% end %>
+  </div>
+  <div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      Filter by Category: <%= (@category) ? @category.name : "All" %>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+        <li><%= link_to "All", admin_sources_path %></li>
+      <% @categories.each do |category| %>
+        <li><%= link_to category.name, "?category="+category.id.to_s %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
 
 <table class="table table-striped">
   <thead>

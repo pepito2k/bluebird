@@ -1,17 +1,17 @@
-<%= render partial: "admin/shared/errors" %>
+<%= render partial: "admin/shared/flash_messages" %>
 
 <%= form_for ["admin", @article], html: {class: "form-horizontal"} do |f| %>
     <%= field_set_tag do %>
         <div class="control-group">
           <%= f.label :title, disabled: "disabled", class: "control-label" %>
           <div class="controls">
-            <%= f.text_field :title, class: "span3" %>
+            <%= f.text_field :title, class: "span7" %>
           </div>
         </div>
         <div class="control-group">
           <%= f.label :url, disabled: "disabled",class: "control-label" %>
           <div class="controls">
-            <%= f.text_field :url, class: "span3" %>
+            <%= f.text_field :url, class: "span7" %>
           </div>
         </div>
         <div class="control-group">

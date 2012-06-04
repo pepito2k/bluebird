@@ -7,4 +7,11 @@ class Category < ActiveRecord::Base
   validates_presence_of :name
 
   scope :active, where(:active => true)
+
+  before_save :add_slug
+
+  private
+  def add_slug
+    self.slug = name.parameterize
+  end
 end
