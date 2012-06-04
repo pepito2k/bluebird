@@ -69,6 +69,7 @@ Bluebird::Application.routes.draw do
     resources :categories
     resources :sources
     resources :articles
+    resources :users
   end
 
 end
