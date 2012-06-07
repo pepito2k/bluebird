@@ -7,7 +7,7 @@ class Admin::ArticlesController < Admin::AdminController
     else
       @articles = Article.paginate(:page => params[:page])
     end
-    @categories = Category.active
+    @categories = Category.active.order("name asc")
   end
 
   def destroy

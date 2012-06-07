@@ -7,7 +7,7 @@ class Admin::SourcesController < Admin::AdminController
     else
       @sources = Source.paginate(:page => params[:page])
     end
-    @categories = Category.active
+    @categories = Category.active.order("name asc")
   end
 
   def show
