@@ -42,9 +42,14 @@
               <ul class="nav pull-right">
                 <li class="divider-vertical"></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><%= current_user.full_name %> <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+                    <li>
+                      <%= link_to "Edit Account", edit_admin_user_path(current_user.id) %>
+                    </li>
+                    <li>
+                      <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+                    </li>
                   </ul>
                 </li>
               </ul>

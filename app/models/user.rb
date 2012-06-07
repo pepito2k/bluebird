@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   validates :password, presence: true, confirmation: true, if: :needs_to_validates_password?
   validates_presence_of :first_name, :last_name, :email
 
+  def full_name
+  	"#{first_name} #{last_name}"
+  end
+
   private
   def needs_to_validates_password?
     encrypted_password_changed? || new_record?
