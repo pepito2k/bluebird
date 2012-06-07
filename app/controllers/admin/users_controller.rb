@@ -1,4 +1,4 @@
-class Admin::UsersController < ApplicationController
+class Admin::UsersController < Admin::AdminController
 
   def index
     @users = User.paginate(:page => params[:page], :order => "first_name asc")
