@@ -9,5 +9,5 @@ class User < ActiveRecord::Base
   attr_accessible :first_name, :last_name, :email, :password, :active, :password_confirmation, :remember_me
   # attr_accessible :title, :body
 
-  validates_presence_of :first_name, :last_name, :email, :password
+  validates_presence_of :first_name, :last_name
 end
