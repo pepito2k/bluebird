@@ -1,6 +1,6 @@
 class Source < ActiveRecord::Base
 
-  attr_accessible :screen_name, :name, :active, :category, :category_id, :twitter_id, 
+  attr_accessible :screen_name, :name, :active, :category, :category_id, :twitter_id,
                   :location, :description, :url, :date_registration, :lang, :profile_image_url
 
   belongs_to :category
