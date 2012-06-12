@@ -34,7 +34,7 @@ class Admin::UsersController < Admin::AdminController
   end
 
   def destroy
-    user = User.find(param[:id])
+    user = User.find(params[:id])
 
     if user.destroy
       flash[:notice] = "User deleted successfully"
