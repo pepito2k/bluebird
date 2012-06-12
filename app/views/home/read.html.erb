@@ -5,9 +5,9 @@
 </header>
 
 <div id="flip" class="container">
-  <%= render :partial => "cover", :locals => { :pages => @pages} %>
-  <%= render :partial => "page1", :locals => { :articles => @pages[0], :category => @category } %>
-  <%= render :partial => "page2", :locals => { :articles => @pages[1], :category => @category } %>
-  <%= render :partial => "page3", :locals => { :articles => @pages[2], :category => @category } %>
-  <%= render :partial => "back_cover" %>
+  <%= render "cover", :pages => @pages %>
+  <%= render "page1", :articles => @pages[0], :category => @category %>
+  <%= render "page2", :articles => @pages[1], :category => @category %>
+  <%= render "page3", :articles => @pages[2], :category => @category %>
+  <%= render "back_cover" %>
 </div>

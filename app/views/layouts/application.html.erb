@@ -37,23 +37,20 @@
 
 <%= yield %>
 
-<script type="text/javascript">  
+<script type="text/javascript">
   var $container  = $( '#flip' ),
-    $pages    = $container.children().hide();
-  
+      $pages      = $container.children().hide();
   Modernizr.load({
     test: Modernizr.csstransforms3d && Modernizr.csstransitions,
     yep : ['/assets/jquery.tmpl.min.js','/assets/jquery.history.js','/assets/core.string.js','/assets/jquery.touchSwipe-1.2.5.js','/assets/jquery.flips.js'],
     nope: 'css/fallback.css',
     callback : function( url, result, key ) {
-      
       if( url === '/assets/fallback.css' ) {
         $pages.show();
       }
       else if( url === '/assets/jquery.flips.js' ) {
         $container.flips();
       }
-  
     }
   });
 </script>
