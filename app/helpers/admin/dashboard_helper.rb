@@ -1,2 +1,2 @@
-module Admin::DashboardHelper
-end
+# module Admin::DashboardHelper
+# end
