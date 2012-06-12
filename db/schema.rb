@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120604211933) do
+ActiveRecord::Schema.define(:version => 20120612011450) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -29,6 +29,8 @@ ActiveRecord::Schema.define(:version => 20120604211933) do
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
   end
+
+  add_index "articles", ["source_id"], :name => "index_articles_on_source_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -56,6 +58,7 @@ ActiveRecord::Schema.define(:version => 20120604211933) do
     t.string   "profile_image_url"
   end
 
+  add_index "sources", ["category_id"], :name => "index_sources_on_category_id"
   add_index "sources", ["screen_name"], :name => "index_sources_on_screen_name", :unique => true
 
   create_table "twits", :force => true do |t|
@@ -69,6 +72,7 @@ ActiveRecord::Schema.define(:version => 20120604211933) do
     t.boolean  "processed",     :default => false
   end
 
+  add_index "twits", ["source_id"], :name => "index_twits_on_source_id"
   add_index "twits", ["twit_id"], :name => "index_twits_on_twit_id", :unique => true
 
   create_table "users", :force => true do |t|
