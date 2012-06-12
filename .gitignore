@@ -17,3 +17,4 @@ pickle-email-*.html
 .idea/
 .rvmrc
 config/database.yml
+rails_best_practices_output.html
