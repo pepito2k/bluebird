@@ -1,5 +1,5 @@
 <div class="f-page">
-  <%= render :partial => "page_title" %>
+  <%= render :partial => "page_title", :locals => { :category => category } %>
   <div class="box w-70 h-50 box-b-r title-top box-img-left">
     <div class="img-cont img-4"></div>
     <h3><%= articles[0].title %> <span>Published May 3, 2012</span></h3>

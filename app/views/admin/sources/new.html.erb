@@ -2,4 +2,4 @@
   <h1>Sources &raquo; New</h1>
 </div>
 
-<%= render partial: "form" %>
+<%= render partial: "form", :locals => { :source => @source, :categories => @categories } %>

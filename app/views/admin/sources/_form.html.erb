@@ -1,6 +1,6 @@
 <%= render partial: "/admin/shared/flash_messages" %>
 
-<%= form_for ["admin", @source], html: { class: "form-horizontal" } do |f| %>
+<%= form_for ["admin", source], html: { class: "form-horizontal" } do |f| %>
   <%= field_set_tag do %>
     <div class="control-group">
       <%= f.label :screen_name, class: "control-label" %>
@@ -24,12 +24,12 @@
     <div class="control-group">
       <%= f.label :category_id, class: "control-label" %>
       <div class="controls">
-        <%= collection_select :source, :category_id, @categories, :id, :name, class: "span3" %>
+        <%= collection_select :source, :category_id, categories, :id, :name, class: "span3" %>
       </div>
     </div>
 
     <div class="form-actions">
-      <% if @source.new_record? %>
+      <% if source.new_record? %>
         <%= f.submit "Create Source", class: "btn btn-primary" %>
       <% else %>
         <%= f.submit "Update Source", class: "btn btn-primary" %>

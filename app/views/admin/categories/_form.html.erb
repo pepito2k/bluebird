@@ -1,6 +1,6 @@
 <%= render partial: "/admin/shared/flash_messages" %>
 
-<%= form_for ["admin", @category], html: { class: "form-horizontal" } do |f| %>
+<%= form_for ["admin", category], html: { class: "form-horizontal" } do |f| %>
   <%= field_set_tag do %>
     <div class="control-group">
       <%= f.label :name, class: "control-label" %>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="form-actions">
-      <% if @category.new_record? %>
+      <% if category.new_record? %>
       <%= f.submit "Create Category", class: "btn btn-primary" %>
       <% else %>
       <%= f.submit "Update Category", class: "btn btn-primary" %>
