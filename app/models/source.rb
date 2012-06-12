@@ -15,6 +15,8 @@ class Source < ActiveRecord::Base
 
   before_save :get_twitter_profile
 
+  delegate :name, :to => :category, :prefix => true
+
   private
   def get_twitter_profile
     unless screen_name_changed? && twitter_id
