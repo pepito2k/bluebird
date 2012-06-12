@@ -6,5 +6,4 @@ class Article < ActiveRecord::Base
   validates_presence_of :title, :url
 
   scope :active, where(:active => true)
-  scope :by_category, lambda{ |id| where(:category_id => id) }
 end
