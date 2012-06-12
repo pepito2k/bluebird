@@ -1,5 +1,7 @@
 class Admin::SourcesController < Admin::AdminController
 
+  before_filter :find_source, :only => [:show, :edit, :update]
+
   def index
     if params['category']
       @category = Category.find(params['category'])
@@ -11,7 +13,6 @@ class Admin::SourcesController < Admin::AdminController
   end
 
   def show
-    @source = Source.find(params[:id])
   end
 
   def new
@@ -31,12 +32,10 @@ class Admin::SourcesController < Admin::AdminController
   end
 
   def edit
-    @source = Source.find(params[:id])
     @categories = Category.active
   end
 
   def update
-    @source = Source.find(params[:id])
     @categories = Category.active
 
     if @source.update_attributes(params[:source])
@@ -55,5 +54,10 @@ class Admin::SourcesController < Admin::AdminController
       flash[:errors] = source.errors.full_messages
     end
     redirect_to admin_sources_path
+  end
+
+  private
+  def find_source
+    @source = Source.find(params[:id])
   end
 end
