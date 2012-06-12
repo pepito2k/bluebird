@@ -68,10 +68,10 @@ Bluebird::Application.routes.draw do
 
   namespace :admin do
     root :to => "dashboard#index"
-    resources :categories
+    resources :categories, :only => [:new, :create, :edit, :update, :destroy, :index]
     resources :sources
-    resources :articles
-    resources :users
+    resources :articles, :only => [:edit, :update, :destroy, :index]
+    resources :users, :only => [:new, :create, :edit, :update, :destroy, :index]
   end
 
 end
