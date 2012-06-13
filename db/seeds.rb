@@ -9,5 +9,6 @@ User.create(
     first_name: "Admin",
     last_name: "Admin",
     email: "admin@trendingmag.com",
-    password: "123admin"
+    password: "123admin",
+    active: true
 )
