@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120613005307) do
+ActiveRecord::Schema.define(:version => 20120614021428) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -63,13 +63,13 @@ ActiveRecord::Schema.define(:version => 20120613005307) do
 
   create_table "twits", :force => true do |t|
     t.datetime "created_at"
-    t.integer  "twit_id"
+    t.integer  "twit_id",       :limit => 8
     t.string   "text"
     t.integer  "retweet_count"
     t.boolean  "favorited"
     t.boolean  "retweeted"
     t.integer  "source_id"
-    t.boolean  "processed",     :default => false
+    t.boolean  "processed",                  :default => false
   end
 
   add_index "twits", ["source_id"], :name => "index_twits_on_source_id"
