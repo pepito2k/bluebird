@@ -1,7 +1,7 @@
 class HomeController < ApplicationController
 
   def index
-    @categories = Category.active
+    @categories = Category.active.select("distinct(categories.id), categories.*").joins(:articles)
   end
 
   def read
