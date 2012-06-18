@@ -36,6 +36,7 @@ GEM
       will_paginate
     builder (3.0.0)
     chronic (0.6.7)
+    cocaine (0.2.1)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -71,9 +72,17 @@ GEM
     mime-types (1.18)
     multi_json (1.3.4)
     multipart-post (1.1.5)
+    mysql2 (0.3.11)
+    mysql2 (0.3.11-x86-mingw32)
     nokogiri (1.5.2)
     nokogiri (1.5.2-x86-mingw32)
     orm_adapter (0.0.7)
+    paperclip (3.1.1)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (>= 0.0.2)
+      mime-types
     pismo (0.7.2)
       awesome_print
       chronic
@@ -148,6 +157,7 @@ GEM
     uglifier (1.2.4)
       execjs (>= 0.3.0)
       multi_json (>= 1.0.2)
+    unshorten (0.1.3)
     warden (1.1.1)
       rack (>= 1.0)
     whenever (0.7.3)
@@ -164,6 +174,8 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   jquery-rails
+  mysql2
+  paperclip (~> 3.0)
   pismo
   quiet_assets
   rails (= 3.2.3)
@@ -173,5 +185,6 @@ DEPENDENCIES
   thin
   twitter
   uglifier (>= 1.0.3)
+  unshorten
   whenever
   will_paginate (~> 3.0)

@@ -2,7 +2,8 @@ class Category < ActiveRecord::Base
   attr_accessible :name, :active
 
   has_many :sources
-  has_many :articles, :through => :sources
+  has_many :articles, through: :sources
+  has_attached_file :cover, styles: { full: "716x1024>", thumb: "179x256>" }
 
   validates_presence_of :name
 

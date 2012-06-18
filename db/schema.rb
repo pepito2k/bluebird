@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120614021428) do
+ActiveRecord::Schema.define(:version => 20120618010743) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -22,22 +22,30 @@ ActiveRecord::Schema.define(:version => 20120614021428) do
     t.text     "description"
     t.datetime "date_published"
     t.integer  "source_id"
-    t.integer  "twitter_shares"
-    t.integer  "facebook_shares"
-    t.integer  "google_plus_shares"
+    t.integer  "twitter_shares",     :default => 0
+    t.integer  "facebook_shares",    :default => 0
+    t.integer  "google_plus_shares", :default => 0
     t.boolean  "active",             :default => true
     t.datetime "created_at",                           :null => false
     t.datetime "updated_at",                           :null => false
+    t.integer  "facebook_likes",     :default => 0
+    t.integer  "digg_shares",        :default => 0
+    t.integer  "delicious_shares",   :default => 0
+    t.integer  "weight",             :default => 0
   end
 
   add_index "articles", ["source_id"], :name => "index_articles_on_source_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
-    t.boolean  "active",     :default => true
-    t.datetime "created_at",                   :null => false
-    t.datetime "updated_at",                   :null => false
+    t.boolean  "active",             :default => true
+    t.datetime "created_at",                           :null => false
+    t.datetime "updated_at",                           :null => false
     t.string   "slug"
+    t.string   "cover_file_name"
+    t.string   "cover_content_type"
+    t.integer  "cover_file_size"
+    t.datetime "cover_updated_at"
   end
 
   add_index "categories", ["slug"], :name => "index_categories_on_slug"
