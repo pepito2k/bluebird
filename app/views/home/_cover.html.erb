@@ -1,4 +1,13 @@
-<div class="f-page f-cover">
+<%= content_for(:head) do %>
+<style>
+.page.cover .front .content{
+	background: #ddd url(<%= @category.cover.url %>) no-repeat center center;
+	background-size: cover;
+}
+</style>
+<% end %>
+
+<div class="f-page f-cover" style="background:url(<%= @category.cover.url %>)">
   <div class="cover-elements">
     <div class="logo">
       Pageflip

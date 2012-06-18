@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-  attr_accessible :name, :active
+  attr_accessible :name, :active, :cover
 
   has_many :sources
   has_many :articles, through: :sources
