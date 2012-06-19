@@ -50,3 +50,5 @@ gem 'thin'
 gem 'mysql2'
 gem 'unshorten'
 gem "paperclip", "~> 3.0"
+gem "fastimage"
+gem "rake-progressbar"

@@ -57,6 +57,7 @@ GEM
     faraday (0.8.0)
       multipart-post (~> 1.1)
     fast-stemmer (1.0.1)
+    fastimage (1.2.13)
     hike (1.2.1)
     i18n (0.6.0)
     journey (1.0.3)
@@ -116,6 +117,7 @@ GEM
       rdoc (~> 3.4)
       thor (~> 0.14.6)
     rake (0.9.2.2)
+    rake-progressbar (0.0.5)
     rdoc (3.12)
       json (~> 1.4)
     sanitize (2.0.3)
@@ -173,12 +175,14 @@ DEPENDENCIES
   bootstrap-will_paginate
   coffee-rails (~> 3.2.1)
   devise
+  fastimage
   jquery-rails
   mysql2
   paperclip (~> 3.0)
   pismo
   quiet_assets
   rails (= 3.2.3)
+  rake-progressbar
   sass-rails (~> 3.2.3)
   sqlite3
   therubyracer

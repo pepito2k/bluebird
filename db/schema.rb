@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120618010743) do
+ActiveRecord::Schema.define(:version => 20120619004944) do
 
   create_table "articles", :force => true do |t|
     t.string   "title"
@@ -32,9 +32,12 @@ ActiveRecord::Schema.define(:version => 20120618010743) do
     t.integer  "digg_shares",        :default => 0
     t.integer  "delicious_shares",   :default => 0
     t.integer  "weight",             :default => 0
+    t.string   "image_url"
+    t.integer  "twit_id"
   end
 
   add_index "articles", ["source_id"], :name => "index_articles_on_source_id"
+  add_index "articles", ["twit_id"], :name => "index_articles_on_twit_id"
 
   create_table "categories", :force => true do |t|
     t.string   "name"
