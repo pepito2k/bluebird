@@ -1,7 +1,13 @@
-<h1><img src="/assets/logo_admin.png" title="TrendingMag" /></h1>
-
-<ul>
-<% @categories.each do |c| %>
-  <li><%= link_to(c.name, read_category_path(c.slug)) %></li>
-<% end %>
+<header class="main-title">
+  <h1><img src="/assets/logo_admin.png" title="TrendingMag" /></h1>
+  <p>Swipe or drag to flip the pages, click to open items </p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque aliquet lacus ut erat elementum tincidunt. Quisque tempor ornare metus sit amet volutpat. Sed semper imperdiet velit ac tincidunt. Sed laoreet nunc ac elit consequat viverra. Suspendisse ultrices blandit elit commodo vestibulum. Nam faucibus felis massa, at aliquam ipsum.</p>
+  <p><strong>Select a category from the list</strong></p>
+  <ul>
+  <% @categories.each do |c| %>
+    <li><%= link_to(c.name, read_category_path(c.slug)) %></li>
+  <% end %>
 </ul>
+</header>
+
+<img src="/assets/ipad_home.png" class="image_home" style="bottom: 0; display: block; height: 90%; position: absolute; right: 0;" />
