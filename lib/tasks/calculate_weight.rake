@@ -16,6 +16,7 @@ task :calculate_weight => :environment do
       article.facebook_shares = facebook_json_object['shares']
       puts '* facebook done!'
     rescue
+      article.facebook_shares = 0
       puts '* facebook failed :('
     end
 
@@ -24,6 +25,7 @@ task :calculate_weight => :environment do
       article.twitter_shares = twitter_json_object['response']['all']
       puts '* twitter done!'
     rescue
+      article.twitter_shares = 0
       puts '* twitter failed :('
     end
 
@@ -32,6 +34,7 @@ task :calculate_weight => :environment do
       article.digg_shares = digg_json_object['count']
       puts '* digg done!'
     rescue
+      article.digg_shares = 0
       puts '* digg failed :('
     end
 
@@ -40,6 +43,7 @@ task :calculate_weight => :environment do
       article.delicious_shares = delicious_json_object[0]['total_posts']
       puts '* delicious done!'
     rescue Exception => e
+      article.delicious_shares = 0
       puts '* delicious failed :('
     end
     puts ''
