@@ -23,6 +23,7 @@ task :process_twits => :environment do
               :body => doc.body,
               :body_html => doc.html_body,
               :url => u,
+              :url_extended => URI.escape(Unshorten[u]).split('?').first,
               :description => doc.lede,
               :date_published => doc.datetime,
               :source_id => t.source_id,
