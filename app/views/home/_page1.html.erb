@@ -1,17 +1,23 @@
 <div class="f-page">
   <%= render "page_title", :category => category %>
   <div class="box w-25 h-70">
-    <div class="img-cont img-1"></div>
+    <% if articles[0].image_url %>
+    <div class="img-cont" style="background-image: url(<%= articles[0].image_url %>);"></div>
+    <% end %>
     <h3><%= articles[0].title %> <span>Published <%= articles[0].date_published.strftime("%b %e, %Y") %></span></h3>
     <p><%= articles[0].body.gsub("\n","<br/>").html_safe %></p>
   </div>
   <div class="box w-50 h-70 box-b-l box-b-r">
-    <div class="img-cont img-2"></div>
+    <% if articles[1].image_url %>
+    <div class="img-cont" style="background-image: url(<%= articles[1].image_url %>);"></div>
+    <% end %>
     <h3><%= articles[1].title %> <span>Published <%= articles[1].date_published.strftime("%b %e, %Y") %></span></h3>
     <p><%= articles[1].body.gsub("\n","<br/>").html_safe %></p>
   </div>
   <div class="box w-25 h-70">
-    <div class="img-cont img-3"></div>
+    <% if articles[3].image_url %>
+    <div class="img-cont" style="background-image: url(<%= articles[3].image_url %>);"></div>
+    <% end %>
     <h3><%= articles[2].title %> <span>Published <%= articles[2].date_published.strftime("%b %e, %Y") %></span></h3>
     <p><%= articles[2].body.gsub("\n","<br/>").html_safe %></p>
   </div>
