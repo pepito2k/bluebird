@@ -1,0 +1,5 @@
+<% if article.image_url %>
+<div class="img-cont" style="background-image: url(<%= article.image_url %>);"></div>
+<% end %>
+<h3><%= article.title %> <span>Published <%= article.date_published.strftime("%b %e, %Y") %></span></h3>
+<p><%= article.body.gsub("\n","<br/>").html_safe %></p>
