@@ -10,6 +10,7 @@ class Article < ActiveRecord::Base
   scope :active, where(:active => true)
 
   delegate :retweet_count, :to => :twit, :prefix => true
+  delegate :name, :to => :source, :prefix => true
 
   before_save :get_shares
 
