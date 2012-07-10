@@ -5,4 +5,5 @@ class Twit < ActiveRecord::Base
   belongs_to :source
 
   scope :not_processed, where(:processed => false)
+  scope :processed, where(:processed => true)
 end

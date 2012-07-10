@@ -1,1 +1,22 @@
-<h1>tas logueado!</h1>
+<div class="page-header">
+  <h1>Dashboard</h1>
+</div>
+
+<div class="row">
+  <div class="span2 well">
+    <h1><%= "#{@tweets_processed} / #{@tweets_total}" %></h1>
+    <h4>Tweets Processed</h4>
+  </div>
+  <div class="span2 well">
+    <h1><%= @articles_created %></h1>
+    <h4>Articles published</h4>
+  </div>
+  <div class="span2 well">
+    <h1><%= @tweet_sources %></h1>
+    <h4>Tweet Sources</h4>
+  </div>
+  <div class="span2 well">
+    <h1><%= @categories %></h1>
+    <h4>Categories</h4>
+  </div>
+</div>
