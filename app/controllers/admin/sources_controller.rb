@@ -17,12 +17,12 @@ class Admin::SourcesController < Admin::AdminController
 
   def new
     @source = Source.new
-    @categories = Category.active
+    @categories = Category.active.order("name asc")
   end
 
   def create
     @source = Source.new(params[:source])
-    @categories = Category.active
+    @categories = Category.active.order("name asc")
     if @source.save
       redirect_to admin_sources_path, notice: "Source added successfully"
     else
@@ -32,11 +32,11 @@ class Admin::SourcesController < Admin::AdminController
   end
 
   def edit
-    @categories = Category.active
+    @categories = Category.active.order("name asc")
   end
 
   def update
-    @categories = Category.active
+    @categories = Category.active.order("name asc")
 
     if @source.update_attributes(params[:source])
       redirect_to admin_sources_path, notice: "Source updated successfully"
