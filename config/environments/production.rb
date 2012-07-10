@@ -8,6 +8,17 @@ Bluebird::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
+  config.action_mailer.default_url_options = { :host => "trendingmag.com" }
+
+  config.action_mailer.smtp_settings = {
+       :address              => "smtp.gmail.com",
+       :port                 => 587,
+       :domain               => 'trendingmag.com',
+       :user_name            => 'no-reply@trendingmag.com',
+       :password             => 'eHJM8V&L',
+       :authentication       => :plain,
+       :enable_starttls_auto => true  }
+
   # Disable Rails's static asset server (Apache or nginx will already do this)
   config.serve_static_assets = false
 
