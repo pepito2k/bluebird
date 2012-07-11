@@ -1,6 +1,6 @@
 class Article < ActiveRecord::Base
   attr_accessible :title, :author, :body, :body_html, :url, :description, :date_published, :source_id, :twit_id, :image_url,
-                  :facebook_shares, :facebook_likes, :facebook_comments, :url_extended
+                  :facebook_shares, :facebook_likes, :facebook_comments, :url_extended, :active
 
   belongs_to :source
   belongs_to :twit
