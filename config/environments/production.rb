@@ -60,6 +60,7 @@ Bluebird::Application.configure do
   config.assets.precompile += %w( admin/admin.css )
   config.assets.precompile << '*.js'
   config.assets.precompile << '*.css'
+  config.assets.precompile << '*.png'
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
