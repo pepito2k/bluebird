@@ -4,10 +4,10 @@
 <h3>
   <%= article.title %>
   <span>
-    Published <%= article.date_published.strftime("%b %e, %Y") %>
+    <%= published_date(article.date_published) %>
     by <%= link_to "@#{article.source.name}", "http://twitter.com/"+article.source_name %>
   </span>
 </h3>
 <p><%= article.body.gsub("\n","<br/>").html_safe %></p>
 <hr />
-<p class="small">Fuente: <%= link_to article.url_extended %></p>
+<p class="small">Fuente: <%= link_to article.title, article.url_extended %></p>
